@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hero Slider</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif}
+
+.hero-slider{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+.hero-slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+.hero-slide.active{
+  opacity:1;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  padding:20px;
+}
+
+.hero-content h1{
+  font-size:clamp(32px,5vw,64px);
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero-content p{
+  max-width:900px;
+  font-size:16px;
+  line-height:1.6;
+  margin-bottom:35px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.hero-btn{
+  padding:14px 32px;
+  border-radius:4px;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  text-decoration:none;
+  transition:all .3s ease;
+}
+
+.hero-btn.primary{
+  background:#e6a23c;
+  color:#fff;
+}
+
+.hero-btn.primary:hover{
+  background:#cf8b1f;
+}
+
+.hero-btn.outline{
+  border:2px solid #e74c3c;
+  color:#fff;
+}
+
+.hero-btn.outline:hover{
+  background:#e74c3c;
+}
+
+/* navigation arrows */
+.hero-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  border:none;
+  width:45px;
+  height:45px;
+  font-size:22px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.hero-arrow.left{left:15px}
+.hero-arrow.right{right:15px}
+
+@media(max-width:768px){
+  .hero-content p{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero-slider">
+
+  <!-- Slide 1: Construction -->
+  <div class="hero-slide active" data-title="Professional Construction Services" data-text="We deliver high-quality residential, commercial, and civil construction projects. From foundation to finishing, our experienced team ensures durability, safety, and on-time completion." style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');"></div>
+
+  <!-- Slide 2: Equipment Hire -->
+  <div class="hero-slide" data-title="Construction Equipment Hire" data-text="Hire modern, well-maintained construction equipment for projects of any scale. Reliable machinery, flexible hire terms, and dependable support when you need it." style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837');"></div>
+
+  <!-- Slide 3: Land Sales -->
+  <div class="hero-slide" data-title="Trusted Land Sales & Property" data-text="We offer verified land and property sales with clear documentation and prime locations. Invest with confidence through our transparent and professional land acquisition process." style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');"></div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 id="heroTitle">Professional Construction Services</h1>
+    <p id="heroText">
+      We deliver high-quality residential, commercial, and civil construction projects. From foundation to finishing, our experienced team ensures durability, safety, and on-time completion.
+    </p>
+    <div class="hero-buttons">
+      <a href="#" class="hero-btn primary">Request a Quote →</a>
+      <a href="#" class="hero-btn outline">View Our Services</a>
+    </div>
+  </div>
+
+  <button class="hero-arrow left" onclick="prevSlide()">❮</button>
+  <button class="hero-arrow right" onclick="nextSlide()">❯</button>
+
+</div>
+
+<script>
+let slides = document.querySelectorAll('.hero-slide');
+let index = 0;
+const titleEl = document.getElementById('heroTitle');
+const textEl = document.getElementById('heroText');
+
+function showSlide(i){
+  slides.forEach(s => s.classList.remove('active'));
+  const slide = slides[i];
+  slide.classList.add('active');
+
+  titleEl.innerHTML = slide.dataset.title;
+  textEl.innerHTML = slide.dataset.text;
+}
+
+function nextSlide(){
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}
+
+function prevSlide(){
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+}
+
+setInterval(nextSlide, 6000);
+</script>
+
+</body>
+</html>
