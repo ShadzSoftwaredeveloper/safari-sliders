@@ -1,0 +1,188 @@
+<!-- Tusome Popup -->
+<div id="popupOverlay" class="popup-overlay">
+  <div class="popup-box">
+
+    <!-- Left Image -->
+    <div class="popup-image"></div>
+
+    <!-- Right Content -->
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">&times;</button>
+
+      <img
+        src="https://tusomecoffee.org/wp-content/uploads/2025/12/Asset-1.png"
+        alt="Tusome Coffee"
+        class="logo"
+      />
+
+      <h2>Welcome to Tusome!</h2>
+
+      <h3 class="highlight">Christmas Special: Get 20% off</h3>
+      <p>
+        Authentic coffee and handmade crafts. Spread the joy this Christmas
+        with 20% off everything.
+      </p>
+
+      <h3>Enjoy Unboxed</h3>
+      <p>Be the first to know about our amazing deals</p>
+
+      <a href="https://tusomecoffee.org" class="subscribe-btn" target="_blank">
+        Subscribe
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<style>
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.popup-box {
+  width: 95%;
+  max-width: 900px;
+  background: #f3dec0;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease;
+}
+
+.popup-image {
+  width: 40%;
+  background: url("https://tusomecoffee.org/wp-content/uploads/2025/12/tusome-popup100.jpg")
+    center/cover no-repeat;
+}
+
+.popup-content {
+  width: 60%;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+.popup-content h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.popup-content p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.subscribe-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #f7941d;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.subscribe-btn:hover {
+  background: #e8840f;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Tablet + Mobile */
+@media (max-width: 1024px) {
+  .popup-box {
+    flex-direction: column;
+  }
+
+  .popup-image {
+    width: 100%;
+    height: 220px;
+  }
+
+  .popup-content {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .popup-content h2 {
+    font-size: 24px;
+  }
+}
+</style>
+
+<script>
+/* Show popup immediately on page load (once per day) */
+window.addEventListener("load", () => {
+  if (!getCookie("tusomePopupShown")) {
+    document.getElementById("popupOverlay").style.display = "flex";
+    setCookie("tusomePopupShown", "true", 1); // 1 day
+  }
+});
+
+/* Close popup */
+function closePopup() {
+  document.getElementById("popupOverlay").style.display = "none";
+}
+
+/* Close when clicking outside */
+document.addEventListener("click", function (e) {
+  const popupBox = document.querySelector(".popup-box");
+  const overlay = document.getElementById("popupOverlay");
+
+  if (
+    overlay.style.display === "flex" &&
+    !popupBox.contains(e.target)
+  ) {
+    overlay.style.display = "none";
+  }
+});
+
+/* Cookie helpers */
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie =
+    name + "=" + value + ";expires=" + d.toUTCString() + ";path=/";
+}
+
+function getCookie(name) {
+  const cname = name + "=";
+  const decoded = decodeURIComponent(document.cookie);
+  const ca = decoded.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
+  }
+  return "";
+}
+</script>

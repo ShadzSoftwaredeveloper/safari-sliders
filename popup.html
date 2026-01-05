@@ -1,0 +1,310 @@
+<!-- <!-- <style>
+.jumia-popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.jumia-popup{
+  width:900px;
+  max-width:95%;
+  background:#fff;
+  display:flex;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+  font-family:Arial, sans-serif;
+}
+
+.jumia-left{
+  width:45%;
+  padding:30px;
+  color:#fff;
+  background:linear-gradient(180deg,#ff9f00 0%,#ff8c00 40%,#1fb56f 40%,#1fb56f 100%);
+}
+
+.jumia-left h1{
+  margin:0 0 10px;
+  font-size:32px;
+  font-weight:800;
+}
+
+.jumia-offer{
+  background:#1fb56f;
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:25px;
+  margin:15px 0;
+  font-weight:bold;
+}
+
+.jumia-left img{
+  width:100%;
+  margin-top:25px;
+}
+
+.jumia-right{
+  width:55%;
+  padding:40px;
+  position:relative;
+}
+
+.jumia-close{
+  position:absolute;
+  top:15px;
+  right:15px;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.jumia-right h2{
+  margin-top:10px;
+}
+
+.jumia-right p{
+  color:#555;
+}
+
+.jumia-right input{
+  width:100%;
+  padding:14px;
+  margin:20px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+.jumia-checkbox{
+  font-size:14px;
+  color:#555;
+  margin-bottom:20px;
+}
+
+.jumia-checkbox a{
+  color:#ff8c00;
+  text-decoration:none;
+}
+
+.jumia-btn{
+  width:100%;
+  padding:14px;
+  background:#ff8c00;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.jumia-btn:hover{
+  background:#e67800;
+}
+
+@media(max-width:768px){
+  .jumia-popup{
+    flex-direction:column;
+  }
+  .jumia-left,.jumia-right{
+    width:100%;
+  }
+}
+</style>
+
+<div class="jumia-popup-overlay">
+  <div class="jumia-popup">
+    <div class="jumia-left">
+      <h1>JUMIA<br>CHRISTMAS<br>MASANYU</h1>
+      <div class="jumia-offer">UP TO 40% OFF</div>
+      <img src="PASTE-YOUR-WORDPRESS-IMAGE-URL-HERE" alt="Offer">
+    </div>
+
+    <div class="jumia-right">
+      <span class="jumia-close" onclick="this.closest('.jumia-popup-overlay').style.display='none'">&times;</span>
+      <h2>Welcome to Jumia!</h2>
+      <p>Subscribe to our newsletter and be the first to know about amazing deals.</p>
+
+      <input type="email" placeholder="Enter E-mail Address">
+
+      <div class="jumia-checkbox">
+        <input type="checkbox"> I agree to Jumia’s Privacy & Cookie Policy.
+        <br><a href="#">I accept the Legal Terms</a>
+      </div>
+
+      <button class="jumia-btn">Subscribe</button>
+    </div>
+  </div>
+</div> -->
+<style>
+/* Overlay */
+/* .jumia-popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  visibility:hidden;
+  transition:.4s;
+}
+
+
+
+/* Active state */
+.jumia-popup-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+/* Popup box */
+.jumia-popup{
+  width:900px;
+  max-width:95%;
+  background:#fff;
+  display:flex;
+  border-radius:8px;
+  overflow:hidden;
+  transform:scale(.85);
+  transition:.4s;
+}
+
+.jumia-popup-overlay.active .jumia-popup{
+  transform:scale(1);
+}
+
+/* Left */
+.jumia-left{
+  width:45%;
+  padding:30px;
+  color:#fff;
+  background:linear-gradient(180deg,#ff9f00 0%,#ff8c00 40%,#1fb56f 40%,#1fb56f 100%);
+}
+
+.jumia-left h1{
+  margin:0;
+  font-size:32px;
+  font-weight:800;
+}
+
+.jumia-offer{
+  background:#1fb56f;
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:25px;
+  margin:15px 0;
+  font-weight:bold;
+}
+
+.jumia-left img{
+  width:100%;
+  margin-top:25px;
+}
+
+/* Right */
+.jumia-right{
+
+  padding:40px;
+  position:relative;
+  font-family:Arial, sans-serif;
+}
+
+.jumia-close{
+  position:absolute;
+  top:15px;
+  right:15px;
+  font-size:26px;
+  cursor:pointer;
+}
+
+.jumia-right p{
+  color:#555;
+}
+
+.jumia-right input{
+  width:100%;
+  padding:14px;
+  margin:20px 0;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+.jumia-checkbox{
+  font-size:14px;
+  color:#555;
+  margin-bottom:20px;
+}
+
+.jumia-checkbox a{
+  color:#ff8c00;
+  text-decoration:none;
+}
+
+.jumia-btn{
+  width:100%;
+  padding:14px;
+  background:#ff8c00;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.jumia-btn:hover{
+  background:#e67800;
+}
+
+@media(max-width:768px){
+  .jumia-popup{
+    flex-direction:column;
+  }
+  .jumia-left,.jumia-right{
+    width:100%;
+  }
+}
+</style>
+
+<div class="jumia-popup-overlay" id="jumiaPopup">
+  <div class="jumia-popup">
+    <div class="jumia-left">
+      <h1>TUSOME <br>CHRISTMAS<br>SALES</h1>
+      <div class="jumia-offer">UP TO 40% OFF</div>
+      <img src="PASTE-YOUR-WORDPRESS-IMAGE-URL-HERE" alt="">
+    </div>
+
+    <div class="jumia-right">
+      <span class="jumia-close" onclick="closeJumiaPopup()">&times;</span>
+      <h2>Welcome to Jumia!</h2>
+      <p>Subscribe to our newsletter and be the first to know about our amazing deals.</p>
+
+      <input type="email" placeholder="Enter E-mail Address">
+
+      <div class="jumia-checkbox">
+        <input type="checkbox"> I agree to Jumia’s Privacy & Cookie Policy.
+        <br><a href="#">I accept the Legal Terms</a>
+      </div>
+
+      <button class="jumia-btn">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if(!sessionStorage.getItem("jumiaPopupShown")){
+    setTimeout(() => {
+
+      document.getElementById("jumiaPopup").classList.add("active");
+      sessionStorage.setItem("jumiaPopupShown","yes");
+    }, 800);
+  }
+});
+
+function closeJumiaPopup(){
+  document.getElementById("jumiaPopup").classList.remove("active");
+}
+</script> */ -->
