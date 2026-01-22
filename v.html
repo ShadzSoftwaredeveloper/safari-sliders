@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Circular Carousel</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body{
+      background:#fff;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+    }
+
+    .circle-wrapper{
+      position:relative;
+      width:500px;
+      height:500px;
+    }
+
+    .circle{
+      position:absolute;
+      inset:0;
+      margin:auto;
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      animation: rotate 20s linear infinite;
+    }
+
+    .circle:hover{
+      animation-play-state: paused;
+    }
+
+    @keyframes rotate{
+      from{ transform:rotate(0deg); }
+      to{ transform:rotate(360deg); }
+    }
+
+    .member{
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:120px;
+      height:120px;
+      margin:-60px;
+      text-align:center;
+    }
+
+    .member img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      filter:grayscale(100%);
+      transition:all .4s ease;
+      box-shadow:0 10px 25px rgba(0,0,0,.15);
+    }
+
+    .member.active img{
+      filter:none;
+      transform:scale(1.2);
+    }
+
+    .card{
+      margin-top:12px;
+      background:#000;
+      color:#fff;
+      padding:8px 12px;
+      border-radius:14px;
+      font-size:12px;
+      opacity:0;
+      transition:.4s;
+    }
+
+    .member.active .card{
+      opacity:1;
+    }
+
+    /* Positions */
+    .member:nth-child(1){ transform:rotate(0deg) translate(220px) rotate(0deg); }
+    .member:nth-child(2){ transform:rotate(72deg) translate(220px) rotate(-72deg); }
+    .member:nth-child(3){ transform:rotate(144deg) translate(220px) rotate(-144deg); }
+    .member:nth-child(4){ transform:rotate(216deg) translate(220px) rotate(-216deg); }
+    .member:nth-child(5){ transform:rotate(288deg) translate(220px) rotate(-288deg); }
+
+    /* Center */
+    .center-member{
+      position:absolute;
+      inset:0;
+      margin:auto;
+      width:160px;
+      height:160px;
+      text-align:center;
+      z-index:5;
+    }
+
+    .center-member img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      box-shadow:0 15px 35px rgba(0,0,0,.25);
+    }
+
+    .center-card{
+      margin-top:14px;
+      background:#000;
+      color:#fff;
+      padding:10px 16px;
+      border-radius:18px;
+      font-size:14px;
+    }
+
+    /* Tablet - Medium screens */
+    @media(max-width:900px){
+      .circle-wrapper{ width:420px; height:420px; }
+      .member{ width:100px; height:100px; margin:-50px; }
+      .member:nth-child(1){ transform:rotate(0deg) translate(180px) rotate(0deg); }
+      .member:nth-child(2){ transform:rotate(72deg) translate(180px) rotate(-72deg); }
+      .member:nth-child(3){ transform:rotate(144deg) translate(180px) rotate(-144deg); }
+      .member:nth-child(4){ transform:rotate(216deg) translate(180px) rotate(-216deg); }
+      .member:nth-child(5){ transform:rotate(288deg) translate(180px) rotate(-288deg); }
+      .center-member{ width:140px; height:140px; }
+      .member.active img{ transform:scale(1.1); }
+    }
+
+    /* Tablet - Small screens */
+    @media(max-width:768px){
+      body{ padding:20px; }
+      .circle-wrapper{ width:380px; height:380px; }
+      .member{ width:95px; height:95px; margin:-47.5px; }
+      .member:nth-child(1){ transform:rotate(0deg) translate(160px) rotate(0deg); }
+      .member:nth-child(2){ transform:rotate(72deg) translate(160px) rotate(-72deg); }
+      .member:nth-child(3){ transform:rotate(144deg) translate(160px) rotate(-144deg); }
+      .member:nth-child(4){ transform:rotate(216deg) translate(160px) rotate(-216deg); }
+      .member:nth-child(5){ transform:rotate(288deg) translate(160px) rotate(-288deg); }
+      .center-member{ width:130px; height:130px; }
+      .member img{ box-shadow:0 8px 20px rgba(0,0,0,.12); }
+      .center-member img{ box-shadow:0 12px 30px rgba(0,0,0,.2); }
+    }
+
+    /* Mobile - Large phones */
+    @media(max-width:600px){
+      body{ padding:15px; }
+      .circle-wrapper{ width:320px; height:320px; }
+      .member{ width:80px; height:80px; margin:-40px; }
+      .member:nth-child(1){ transform:rotate(0deg) translate(130px) rotate(0deg); }
+      .member:nth-child(2){ transform:rotate(72deg) translate(130px) rotate(-72deg); }
+      .member:nth-child(3){ transform:rotate(144deg) translate(130px) rotate(-144deg); }
+      .member:nth-child(4){ transform:rotate(216deg) translate(130px) rotate(-216deg); }
+      .member:nth-child(5){ transform:rotate(288deg) translate(130px) rotate(-288deg); }
+      .center-member{ width:110px; height:110px; }
+      .member img{ box-shadow:0 6px 15px rgba(0,0,0,.1); }
+      .center-member img{ box-shadow:0 10px 25px rgba(0,0,0,.18); }
+      .card{ margin-top:8px; padding:6px 10px; font-size:10px; }
+      .center-card{ margin-top:10px; padding:8px 12px; font-size:12px; }
+      .member.active img{ transform:scale(1.15); }
+    }
+
+    /* Mobile - Medium phones */
+    @media(max-width:480px){
+      body{ padding:10px; }
+      .circle-wrapper{ width:280px; height:280px; }
+      .member{ width:70px; height:70px; margin:-35px; }
+      .member:nth-child(1){ transform:rotate(0deg) translate(115px) rotate(0deg); }
+      .member:nth-child(2){ transform:rotate(72deg) translate(115px) rotate(-72deg); }
+      .member:nth-child(3){ transform:rotate(144deg) translate(115px) rotate(-144deg); }
+      .member:nth-child(4){ transform:rotate(216deg) translate(115px) rotate(-216deg); }
+      .member:nth-child(5){ transform:rotate(288deg) translate(115px) rotate(-288deg); }
+      .center-member{ width:100px; height:100px; }
+      .card{ margin-top:6px; padding:5px 8px; font-size:9px; }
+      .center-card{ margin-top:8px; padding:7px 10px; font-size:11px; }
+      .member img{ box-shadow:0 4px 12px rgba(0,0,0,.1); }
+      .center-member img{ box-shadow:0 8px 20px rgba(0,0,0,.15); }
+    }
+
+    /* Mobile - Small phones */
+    @media(max-width:380px){
+      body{ padding:8px; }
+      .circle-wrapper{ width:260px; height:260px; }
+      .member{ width:65px; height:65px; margin:-32.5px; }
+      .member:nth-child(1){ transform:rotate(0deg) translate(105px) rotate(0deg); }
+      .member:nth-child(2){ transform:rotate(72deg) translate(105px) rotate(-72deg); }
+      .member:nth-child(3){ transform:rotate(144deg) translate(105px) rotate(-144deg); }
+      .member:nth-child(4){ transform:rotate(216deg) translate(105px) rotate(-216deg); }
+      .member:nth-child(5){ transform:rotate(288deg) translate(105px) rotate(-288deg); }
+      .center-member{ width:90px; height:90px; }
+      .card{ margin-top:4px; padding:4px 6px; font-size:8px; }
+      .center-card{ margin-top:6px; padding:6px 8px; font-size:10px; }
+      .member img{ box-shadow:0 3px 10px rgba(0,0,0,.1); }
+      .center-member img{ box-shadow:0 6px 15px rgba(0,0,0,.12); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="circle-wrapper">
+
+  <div class="center-member" id="center">
+    <img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/08/Screenshot-2025-08-22-003814.png" />
+    <div class="center-card">
+      <strong>Moses Mbona</strong><br>HEAD OF STUDIO
+    </div>
+  </div>
+
+  <div class="circle" id="circle">
+
+    <div class="member active">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" />
+      <div class="card">Manasi<br>Creative</div>
+    </div>
+
+    <div class="member">
+      <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39" />
+      <div class="card">Shivan<br>Finance</div>
+    </div>
+
+    <div class="member">
+      <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1" />
+      <div class="card">Moses<br>Studio</div>
+    </div>
+
+    <div class="member">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" />
+      <div class="card">Rita<br>Digital</div>
+    </div>
+
+    <div class="member">
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" />
+      <div class="card">Odongo<br>Production</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const members = document.querySelectorAll('.member');
+  const centerImg = document.querySelector('#center img');
+  const centerCard = document.querySelector('.center-card');
+  let index = 0;
+
+  setInterval(()=>{
+    members.forEach(m=>m.classList.remove('active'));
+    index = (index + 1) % members.length;
+    members[index].classList.add('active');
+
+    const img = members[index].querySelector('img').src;
+    const text = members[index].querySelector('.card').innerHTML;
+    centerImg.src = img;
+    centerCard.innerHTML = text;
+  },3000);
+</script>
+
+</body>
+</html>
