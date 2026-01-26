@@ -1,0 +1,307 @@
+<style>
+.safari-slider * {
+  box-sizing: border-box;
+  font-family: Titillium;
+}
+
+.safari-slider {
+  max-width: 1200px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.safari-slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.safari-slide {
+  min-width: 100%;
+  display: flex;
+}
+
+.safari-img {
+  width: 50%;
+}
+
+.safari-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.safari-content {
+     font-family: Titillium;
+  width: 50%;
+  padding: 60px;
+  animation: fadeSlide 0.7s ease;
+}
+
+.safari-content small {
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+.safari-content h2 {
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+.safari-meta span {
+  margin-right: 20px;
+  color: #555;
+}
+
+.safari-meta b {
+  color: #e53935;
+}
+
+.safari-content p {
+     font-family: Titillium;
+  margin: 25px 0;
+  color: #666;
+  line-height: 1.7;
+}
+
+.safari-btn {
+  background: #dd993a;
+  color: #fff;
+  padding: 10px 50px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Arrows */
+.safari-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #fff;
+  background: #dd993a;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.safari-arrow.left { left: 10px; }
+.safari-arrow.right { right: 10px; }
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .safari-content {
+    padding: 40px;
+  }
+
+  .safari-content h2 {
+    font-size: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .safari-slide {
+    flex-direction: column;
+  }
+
+  .safari-img,
+  .safari-content {
+    width: 100%;
+  }
+
+  .safari-img {
+    height: 240px;
+  }
+
+  .safari-content {
+    padding: 24px;
+  }
+
+  .safari-content h2 {
+    font-size: 26px;
+  }
+
+  .safari-meta span {
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+
+  .safari-arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 26px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .safari-slider {
+    margin: 20px auto;
+  }
+
+  .safari-img {
+    height: 200px;
+  }
+
+  .safari-content {
+    padding: 18px;
+  }
+
+  .safari-content h2 {
+    font-size: 22px;
+  }
+
+  .safari-content p {
+    font-size: 14px;
+  }
+
+  .safari-btn {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+  .safari-dots {
+    padding: 10px;
+  }
+
+  .safari-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+</style>
+
+<div class="safari-slider" id="safariSlider">
+  <div class="safari-arrow left">❮</div>
+  <div class="safari-arrow right">❯</div>
+
+  <div class="safari-slides">
+
+    <!-- SLIDE 1 -->
+    <div class="safari-slide">
+      <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_3858-scaled-1.webp"></div>
+      <div class="safari-content">
+        <small>WEEKEND TOUR</small>
+        <h2>Traditional  immersive coffee </h2>
+        <div class="safari-meta"><span>3 days</span><span>20–35</span><span><b>$140</b></span></div>
+        <p>Experience the true spirit of Africa through coffee, culture, and community. From planting seedlings and tasting traditional cuisine to sharing stories by the fire and dancing under the stars, every moment connects you to the land and its people.</p>
+        <a class="safari-btn" href="https://wildheartafricansafaris.com/our-immersive-coffee-experiences/">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="safari-slide">
+      <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_9719-scaled-1.webp"></div>
+      <div class="safari-content">
+        <small>RELAX</small>
+        <h2>Modern coffee roasting</h2>
+        <div class="safari-meta"><span>4 days</span><span>15–30</span><span><b>$180</b></span></div>
+        <p>Experience the true spirit of Africa through coffee, culture, and community. From planting seedlings and tasting traditional cuisine to sharing stories by the fire and dancing under the stars, every moment connects you to the land and its people.</p>
+        <a class="safari-btn" href="https://wildheartafricansafaris.com/modern-coffee-cultural-center-visit/">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="safari-slide">
+      <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_3482-scaled-1.webp"></div>
+      <div class="safari-content">
+        <small>ADVENTURE</small>
+        <h2>Gardening & Local Food Experience</h2>
+        <div class="safari-meta"><span>2 days</span><span>10–20</span><span><b>$95</b></span></div>
+        <p>A journey of culture, nature, and connection — from coffee farming and traditional cuisine to wildlife, community outreach, and local heritage. An adventure that blends discovery with unforgettable memories.</p>
+        <a class="safari-btn" href="https://wildheartafricansafaris.com/gardening-local-food-experience/">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="safari-slide">
+      <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/WPC_5869-scaled-1.webp"></div>
+      <div class="safari-content">
+        <small>NATURE</small>
+        <h2>School Outreach & Children's Programs</h2>
+        <div class="safari-meta"><span>3 days</span><span>10–25</span><span><b>$120</b></span></div>
+        <p>Join us in supporting local education through our school outreach initiatives, where you'll deliver essential scholastic supplies directly to children who need them most. </p>
+        <a class="safari-btn" href="https://wildheartafricansafaris.com/school-outreach-childrens-programs/">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="safari-slide">
+      <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_9752-scaled-1.webp"></div>
+      <div class="safari-content">
+        <small>CULTURE</small>
+        <h2>Cultural Immersion</h2>
+        <div class="safari-meta"><span>1 day</span><span>5–15</span><span><b>$60</b></span></div>
+        <p>Culture is a people's way of life, and Ugandan culture stands as one of the most diverse and dynamic in the world. With over 50 ethnic tribes and languages, Uganda is truly a cultural mosaic. Yet despite this incredible diversity,</p>
+        <a class="safari-btn" href="https://wildheartafricansafaris.com/cultural-immersion/">Learn More</a>
+      </div>
+    </div>
+    
+     <!-- SLIDE 6 -->
+    <div class="safari-slide">
+      <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_5228-scaled-1.webp"></div>
+      <div class="safari-content">
+        <small>CULTURE</small>
+        <h2>Vulnerable Groups Skilling & Entrepreneurships</h2>
+        <div class="safari-meta"><span>1 day</span><span>5–15</span><span><b>$60</b></span></div>
+        <p>Witness the transformative power of entrepreneurship as you join vulnerable community members – single mothers, widows, and youth – on their journey toward self-sustainability.</p>
+        <a class="safari-btn" href="https://wildheartafricansafaris.com/vulnerable-groups-empowerment/">Learn More</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(()=>{
+const slider=document.getElementById('safariSlider');
+const slides=slider.querySelector('.safari-slides');
+const count=slides.children.length;
+let i=0,startX=0,timer;
+
+function update(){
+  slides.style.transform=`translateX(-${i*100}%)`;
+}
+
+function go(n){i=n;update();}
+function next(){i=(i+1)%count;update();}
+
+slider.querySelector('.right').onclick=next;
+slider.querySelector('.left').onclick=()=>{i=(i-1+count)%count;update();};
+
+function autoplay(){timer=setInterval(next,4000);} autoplay();
+slider.onmouseenter=()=>clearInterval(timer);
+slider.onmouseleave=autoplay;
+
+slider.addEventListener('touchstart',e=>startX=e.touches[0].clientX);
+slider.addEventListener('touchend',e=>{
+  const endX=e.changedTouches[0].clientX;
+  if(startX-endX>50) next();
+  if(endX-startX>50){i=(i-1+count)%count;update();}
+});
+})();
+</script>
