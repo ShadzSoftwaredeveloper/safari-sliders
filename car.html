@@ -1,3 +1,4 @@
+
 <style>
 .safari-slider * {
   box-sizing: border-box;
@@ -5,9 +6,14 @@
 }
 
 .safari-slider {
-  max-width: 900px;
+  max-width: 1200px;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+ 
   height: 400px;
-  margin: 40px auto;
+ 
   position: relative;
   overflow: hidden;
   background: #fff;
@@ -36,7 +42,7 @@
 .safari-content {
      font-family: Titillium;
   width: 50%;
-  padding: 60px;
+  padding: 45px;
   animation: fadeSlide 0.7s ease;
 }
 
@@ -94,7 +100,7 @@
   transform: translateY(-50%);
   font-size: 18px;
   color: #fff;
-  background: #dd993a;
+  background: rgba(221, 153, 58, 0.7);
   width: 40px;
   height: 40px;
   display: flex;
@@ -125,6 +131,10 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  .safari-slider {
+    height: auto;
+  }
+
   .safari-slide {
     flex-direction: column;
   }
@@ -152,9 +162,7 @@
   }
 
   .safari-arrow {
-    width: 45px;
-    height: 45px;
-    font-size: 26px;
+    display: none;
   }
 }
 
@@ -206,7 +214,7 @@
     <div class="safari-slide">
       <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_3858-scaled-1.webp"></div>
       <div class="safari-content">
-        <small>WEEKEND TOUR</small>
+    
         <h2>Traditional  immersive coffee </h2>
         <div class="safari-meta"><span>3 days</span><span>20–35</span><span><b>$140</b></span></div>
         <p>Experience the true spirit of Africa through coffee, culture, and community. From planting seedlings and tasting traditional cuisine to sharing stories by the fire and dancing under the stars, every moment connects you to the land and its people.</p>
@@ -218,7 +226,7 @@
     <div class="safari-slide">
       <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_9719-scaled-1.webp"></div>
       <div class="safari-content">
-        <small>RELAX</small>
+    
         <h2>Modern coffee roasting</h2>
         <div class="safari-meta"><span>4 days</span><span>15–30</span><span><b>$180</b></span></div>
         <p>Experience the true spirit of Africa through coffee, culture, and community. From planting seedlings and tasting traditional cuisine to sharing stories by the fire and dancing under the stars, every moment connects you to the land and its people.</p>
@@ -230,7 +238,6 @@
     <div class="safari-slide">
       <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_3482-scaled-1.webp"></div>
       <div class="safari-content">
-        <small>ADVENTURE</small>
         <h2>Gardening & Local Food Experience</h2>
         <div class="safari-meta"><span>2 days</span><span>10–20</span><span><b>$95</b></span></div>
         <p>A journey of culture, nature, and connection — from coffee farming and traditional cuisine to wildlife, community outreach, and local heritage. An adventure that blends discovery with unforgettable memories.</p>
@@ -242,7 +249,7 @@
     <div class="safari-slide">
       <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/WPC_5869-scaled-1.webp"></div>
       <div class="safari-content">
-        <small>NATURE</small>
+      
         <h2>School Outreach & Children's Programs</h2>
         <div class="safari-meta"><span>3 days</span><span>10–25</span><span><b>$120</b></span></div>
         <p>Join us in supporting local education through our school outreach initiatives, where you'll deliver essential scholastic supplies directly to children who need them most. </p>
@@ -254,7 +261,7 @@
     <div class="safari-slide">
       <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_9752-scaled-1.webp"></div>
       <div class="safari-content">
-        <small>CULTURE</small>
+    
         <h2>Cultural Immersion</h2>
         <div class="safari-meta"><span>1 day</span><span>5–15</span><span><b>$60</b></span></div>
         <p>Culture is a people's way of life, and Ugandan culture stands as one of the most diverse and dynamic in the world. With over 50 ethnic tribes and languages, Uganda is truly a cultural mosaic. Yet despite this incredible diversity,</p>
@@ -266,7 +273,7 @@
     <div class="safari-slide">
       <div class="safari-img"><img src="https://wildheartafricansafaris.com/wp-content/uploads/2025/11/IMG_5228-scaled-1.webp"></div>
       <div class="safari-content">
-        <small>CULTURE</small>
+    
         <h2>Vulnerable Groups Skilling & Entrepreneurships</h2>
         <div class="safari-meta"><span>1 day</span><span>5–15</span><span><b>$60</b></span></div>
         <p>Witness the transformative power of entrepreneurship as you join vulnerable community members – single mothers, widows, and youth – on their journey toward self-sustainability.</p>
@@ -306,3 +313,5 @@ slider.addEventListener('touchend',e=>{
 });
 })();
 </script>
+</body>
+</html>
