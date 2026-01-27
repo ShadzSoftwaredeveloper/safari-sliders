@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wildlife Info Grid</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #111;
+      padding: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      display: flex;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .card img {
+      width: 45%;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 20px;
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .content h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .content p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 14px;
+    }
+
+    .best {
+      color: #e60000;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 6px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "•";
+      color: #f4b400;
+      position: absolute;
+      left: 0;
+      font-size: 20px;
+      top: -2px;
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card img {
+        width: 40%;
+      }
+
+      .content {
+        width: 60%;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+
+      .card {
+        flex-direction: column;
+      }
+
+      .card img {
+        width: 100%;
+        height: 220px;
+      }
+
+      .content {
+        width: 100%;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid">
+
+    <!-- Rhino -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d" alt="Rhino">
+      <div class="content">
+        <h3>Rhino</h3>
+        <p>The rhinoceros is the largest land animal after the elephant. Modern rhinos reach a length of 2–5 meters and weigh from 1 to 3.6 tons.</p>
+        <div class="best">Best places to see:</div>
+        <ul>
+          <li>Hluhluwe–Imfolozi Park</li>
+          <li>Kruger National Park</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cheetah -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2" alt="Cheetah">
+      <div class="content">
+        <h3>Cheetah</h3>
+        <p>The cheetah is the fastest animal in the world. When chasing prey, it can reach speeds of up to 112 kilometers per hour.</p>
+        <div class="best">Best places to see:</div>
+        <ul>
+          <li>Masai Mara National Park</li>
+          <li>Amboseli National Park</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Elephant -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Elephant">
+      <div class="content">
+        <h3>Elephant</h3>
+        <p>Elephants are giants among animals. Their weight ranges from 3 to 7 tons, with African elephants often reaching 10–12 tons.</p>
+        <div class="best">Best places to see:</div>
+        <ul>
+          <li>Chobe National Park</li>
+          <li>Kruger National Park</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Zebra -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" alt="Zebra">
+      <div class="content">
+        <h3>Zebra</h3>
+        <p>Zebras reach more than 2 meters in length and weigh 300–350 kg. They have poor eyesight but a well‑developed sense of smell.</p>
+        <div class="best">Best places to see:</div>
+        <ul>
+          <li>Hluhluwe–Imfolozi Park</li>
+          <li>Etosha National Park</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
