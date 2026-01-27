@@ -1,0 +1,242 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+  section.dcc-section {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  #top-bar-inner,
+  #site-header-inner,
+  #footer {
+    display: none;
+  }
+
+  .dcc-container {
+    background: linear-gradient(135deg ,#fb038b,#461b43);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  .dcc-profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .dcc-title {
+    color: #fcfcfc;
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+  }
+
+  .dcc-text {
+    color: #fcfcfc;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== SOCIAL GRID ===== */
+  .dcc-social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .dcc-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.75rem;
+    background-color:#ca198e;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .dcc-link:hover {
+    background-color: #380328;
+    transform: translateY(-2px);
+  }
+
+  .dcc-link i {
+    font-size: 1.2rem;
+  }
+
+  /* Mobile: single column */
+  @media (max-width: 360px) {
+    .dcc-social-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ===== FULL-WIDTH MOBILE OVERRIDE ===== */
+@media (max-width: 768px) {
+  section.dcc-section {
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .dcc-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 1.5rem 1rem 2rem;
+    box-shadow: none;
+  }
+
+  .dcc-slider {
+    border-radius: 0;
+  }
+
+  .dcc-slide img {
+    border-radius: 0;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .dcc-social-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  /* ===== SLIDER ===== */
+  .dcc-slider-section {
+    margin-top: 2rem;
+  }
+
+  .dcc-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .dcc-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .dcc-slide {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .dcc-slide img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .dcc-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+  }
+
+  .dcc-indicators span {
+    width: 10px;
+    height: 10px;
+    background: #ca198e;
+    border-radius: 50%;
+  }
+
+  .dcc-indicators span.active {
+    background: #ff3fec;
+  }
+</style>
+
+<section class="dcc-section">
+  <div class="dcc-container">
+    <img src="https://zulaobusobozibwo.com/wp-content/uploads/2025/08/cropped-ZUULA-LOGO-2024-1-scaled-1.png" class="dcc-profile-img" />
+
+    <h1 class="dcc-title">Zuula Obusobozibwo</h1>
+    <p class="dcc-text">Unlock Your Gifts, Influence, and Destiny for God’s Kingdom</p>
+
+    <div class="dcc-social-grid">
+      <a href="https://zulaobusobozibwo.com/" class="dcc-link" target="_blank">
+        <i class="fas fa-globe"></i> Website
+      </a>
+
+      <a href="https://www.tiktok.com/@tumusiimejosephprosper" class="dcc-link" target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=100094900429500" class="dcc-link" target="_blank">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+
+      <a href=" zuulaobusobozibwo1433  ·" class="dcc-link" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+
+      <a href=" https://wwwinstagramcom/zuulaug?" class="dcc-link" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+      <a href="mailto:sentongogeral01@gmail.com" class="dcc-link">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+    </div>
+
+    <div class="dcc-slider-section">
+      <div class="dcc-slider">
+        <div class="dcc-slides" id="dccSlides">
+          <div class="dcc-slide">
+            <img src="https://zulaobusobozibwo.com/wp-content/uploads/2025/08/IMG-20250830-WA0059.jpg">
+          </div>
+          <div class="dcc-slide">
+            <img src="https://zulaobusobozibwo.com/wp-content/uploads/2025/08/IMG-20250830-WA0060.jpg">
+          </div>
+          <div class="dcc-slide">
+            <img src="https://zulaobusobozibwo.com/wp-content/uploads/2025/08/IMG-20250830-WA0058.jpg">
+          </div>
+        </div>
+      </div>
+
+      <div class="dcc-indicators" id="dccIndicators">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.getElementById("dccSlides");
+  const indicators = document.getElementById("dccIndicators").children;
+  const maxSlides = slides.children.length;
+
+  function showSlide(index) {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    Array.from(indicators).forEach((el, i) => {
+      el.classList.toggle("active", i === index);
+    });
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % maxSlides;
+    showSlide(currentSlide);
+  }, 3000);
+</script>
